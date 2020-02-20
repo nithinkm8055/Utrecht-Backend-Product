@@ -1,8 +1,21 @@
 package com.digital.ing.product.controllers.responses;
 
-import java.io.Serializable;
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class ProductGroupResponse {
-    public List<ProductGroup> productGroups;
+    /**
+     * List of all product groups
+     */
+    private List<ProductGroup> productGroups;
+
+    public List<ProductGroup> getProductGroups() {
+        return productGroups;
+    }
+
+    public void setProductGroups(List<ProductGroup> productGroups) {
+        this.productGroups = productGroups;
+    }
 }
