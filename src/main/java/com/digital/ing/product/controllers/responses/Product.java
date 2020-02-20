@@ -1,8 +1,5 @@
 package com.digital.ing.product.controllers.responses;
 
-import lombok.Data;
-
-@Data
 public class Product {
     /**
      * Product ID

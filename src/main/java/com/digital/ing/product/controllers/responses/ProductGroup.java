@@ -1,11 +1,7 @@
 package com.digital.ing.product.controllers.responses;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 import java.util.List;
 
-@Data
 public class ProductGroup {
 
     /**
