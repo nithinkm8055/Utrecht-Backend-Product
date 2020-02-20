@@ -54,6 +54,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- Adding lombok to generate pojo classes -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
