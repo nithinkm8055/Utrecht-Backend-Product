@@ -16,11 +16,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
-public class ApiExceptionHandler {
+public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
 	/**
 	 * Build the response for Exception.
@@ -30,7 +31,10 @@ public class ApiExceptionHandler {
 	 * @param apiError the model object
 	 * @return a {@code ResponseEntity} instance
 	 */
-	private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
-		return new ResponseEntity<>(apiError, apiError.getStatus());
+	@ExceptionHandler({
+			ApiException.class
+	})
+	public ResponseEntity<Object> handle(ApiException apiException) {
+		return new ResponseEntity<>(new ApiError(apiException.getStatus(),apiException.getMessage(),apiException.getErrors()), apiException.getStatus());
 	}
 }

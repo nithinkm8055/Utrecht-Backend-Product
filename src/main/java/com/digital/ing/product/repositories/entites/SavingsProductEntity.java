@@ -2,16 +2,11 @@ package com.digital.ing.product.repositories.entites;
 
 import java.math.BigDecimal;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
-public class MortgageProduct {
-	
+@Table(name="savings_product")
+public class SavingsProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -22,9 +17,9 @@ public class MortgageProduct {
 	    )
 	private ProductEntity productEntity;
 	
-	private BigDecimal remainingMortgage;
+	private BigDecimal accountBalance;
 	
-	private int accountNumber;
+	private String accountNumber;
 
 	public Long getId() {
 		return id;
@@ -42,22 +37,21 @@ public class MortgageProduct {
 		this.productEntity = productEntity;
 	}
 
-	public BigDecimal getRemainingMortgage() {
-		return remainingMortgage;
+	public BigDecimal getAccountBalance() {
+		return accountBalance;
 	}
 
-	public void setRemainingMortgage(BigDecimal remainingMortgage) {
-		this.remainingMortgage = remainingMortgage;
+	public void setAccountBalance(BigDecimal accountBalance) {
+		this.accountBalance = accountBalance;
 	}
 
-	public int getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	
 	
 	
 }

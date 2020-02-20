@@ -1,11 +1,11 @@
 package com.digital.ing.product.exceptions;
 
+import org.springframework.http.HttpStatus;
+
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-
-public class ApiError{
+public class ApiException extends RuntimeException{
 
 	private HttpStatus status;
 	private String message;
@@ -35,14 +35,14 @@ public class ApiError{
 		this.errors = errors;
 	}
 
-	public ApiError(HttpStatus status, String message, List<String> errors) {
+	public ApiException(HttpStatus status, String message, List<String> errors) {
 		super();
 		this.status = status;
 		this.message = message;
 		this.errors = errors;
 	}
 
-	public ApiError(HttpStatus status, String message, String error) {
+	public ApiException(HttpStatus status, String message, String error) {
 		super();
 		this.status = status;
 		this.message = message;
