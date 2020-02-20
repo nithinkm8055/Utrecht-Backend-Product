@@ -11,4 +11,6 @@ public class ProductsController {
     public ProductGroupResponse getAllProductGroups(){
         return new ProductGroupResponse();
     }
+
+
 }
