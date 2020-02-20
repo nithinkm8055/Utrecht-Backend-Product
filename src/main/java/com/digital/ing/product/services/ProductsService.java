@@ -5,8 +5,8 @@ import com.digital.ing.product.controllers.responses.ProductGroup;
 import com.digital.ing.product.controllers.responses.ProductGroupResponse;
 import com.digital.ing.product.repositories.entites.ProductEntity;
 import com.digital.ing.product.repositories.entites.ProductGroupEntity;
-import com.digital.ing.product.repositories.entites.ProductGroupRepository;
-import com.digital.ing.product.repositories.entites.ProductRepository;
+import com.digital.ing.product.repositories.ProductGroupRepository;
+import com.digital.ing.product.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,28 +47,5 @@ public class ProductsService {
         product.setId(productEntity.getId());
         product.setName(productEntity.getProductName());
         return product;
-    }
-
-    //TODO :: Temporary response will be removed
-    private ProductGroupResponse createProductResponse() {
-        ProductGroupResponse productGroupResponse = new ProductGroupResponse();
-        ProductGroup productGroup = new ProductGroup();
-        productGroup.setName("Savings");
-        productGroup.setId(1L);
-        Product product = new Product();
-        product.setId(1L);
-        product.setName("Oranjespaarenkening");
-        List<Product> productList = new ArrayList<>();
-        productList.add(product);
-        product = new Product();
-        product.setId(2L);
-        product.setName("Bonusrenterekening");
-        productList.add(product);
-        productGroup.setProducts(productList);
-        List<ProductGroup> productGroupList = new ArrayList<>();
-        productGroupList.add(productGroup);
-        productGroupResponse.setProductGroups(productGroupList);
-
-        return productGroupResponse;
     }
 }
