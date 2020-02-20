@@ -5,12 +5,12 @@ import java.util.List;
 public class ProductGroup {
 
     /**
-     * Product Group ID
+     * ProductEntity Group ID
      */
     private Long id;
 
     /**
-     * Product Group Name
+     * ProductEntity Group Name
      */
     private String name;
 

@@ -1,4 +1,4 @@
-package com.digital.ing.product.entites;
+package com.digital.ing.product.repositories.entites;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class SavingsProduct {
+public class PaymentsProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -19,9 +19,9 @@ public class SavingsProduct {
 	        cascade = CascadeType.ALL,
 	        orphanRemoval = true
 	    )
-	private Product product;
+	private ProductEntity productEntity;
 	
-	private BigDecimal accountBalance;
+	private BigDecimal accountLimit;
 	
 	private int accountNumber;
 
@@ -33,20 +33,20 @@ public class SavingsProduct {
 		this.id = id;
 	}
 
-	public Product getProduct() {
-		return product;
+	public ProductEntity getProductEntity() {
+		return productEntity;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setProductEntity(ProductEntity productEntity) {
+		this.productEntity = productEntity;
 	}
 
-	public BigDecimal getAccountBalance() {
-		return accountBalance;
+	public BigDecimal getAccountLimit() {
+		return accountLimit;
 	}
 
-	public void setAccountBalance(BigDecimal accountBalance) {
-		this.accountBalance = accountBalance;
+	public void setAccountLimit(BigDecimal accountLimit) {
+		this.accountLimit = accountLimit;
 	}
 
 	public int getAccountNumber() {
@@ -58,4 +58,5 @@ public class SavingsProduct {
 	}
 	
 	
+
 }

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.digital.ing</groupId>
-	<artifactId>product</artifactId>
+	<artifactId>productEntity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>product</name>
+	<name>productEntity</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -41,6 +41,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<version>1.4.193</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>

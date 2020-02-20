@@ -2,12 +2,12 @@ package com.digital.ing.product.controllers.responses;
 
 public class Product {
     /**
-     * Product ID
+     * ProductEntity ID
      */
     private Long id;
 
     /**
-     * Product Name
+     * ProductEntity Name
      */
     private String name;
 
