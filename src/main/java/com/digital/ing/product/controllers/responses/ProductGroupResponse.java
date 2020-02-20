@@ -1,10 +1,7 @@
 package com.digital.ing.product.controllers.responses;
 
-import lombok.Data;
-
 import java.util.List;
 
-@Data
 public class ProductGroupResponse {
     /**
      * List of all product groups
